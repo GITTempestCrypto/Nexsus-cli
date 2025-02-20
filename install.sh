@@ -3,6 +3,9 @@
 set -e  # Exit script if any command fails
 
 echo "🔄 Updating the system..."
+# Install needrestart if not installed
+sudo apt-get install -y needrestart
+
 # Disable needrestart notifications
 sudo sed -i 's/#\$nrconf{restart} =.*/$nrconf{restart} = "a";/' /etc/needrestart/needrestart.conf
 
